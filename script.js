@@ -29,10 +29,10 @@ function createCard(book) {
     card.innerHTML = `
     <h3 class="book-title">
       <ul>
-          <li>Title : ${book.name}</li> 
-          <li>Author : ${book.author}</li>
-          <li>Year : ${book.year}</li>
-          <li>Pages : ${book.pages}</li>
+          <li><span class="hx">Title</span> : ${book.name}</li> 
+          <li><span class="hx">Author</span> : ${book.author}</li>
+          <li><span class="hx">Year</span> : ${book.year}</li>
+          <li><span class="hx">Pages</span> : ${book.pages}</li>
       </ul>
           <div class="card-buttons"><button class="read-button" data-index="${myLibrary.indexOf(book)}">${text}</button>
           <button class="remove-button">Remove</button></div>   

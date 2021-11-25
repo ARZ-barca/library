@@ -2,16 +2,33 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: skyblue;
+}
+
 h1 {
     text-align: center;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
 
 .card {
     border: 5px double #477e94;
     border-radius: 10px;
     min-width: 345px;
+    background-color: rgb(223, 206, 223);
+}
+
+li {
+    line-height: 1.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.hx {
+    color: rgb(52, 113, 131);
 }
 
 .cards {
@@ -86,7 +103,6 @@ h1 {
 }
 
 .card-buttons {
-    borderr: 2px solid red;
     height: 40px;
     display: flex;
     justify-content: space-around;
