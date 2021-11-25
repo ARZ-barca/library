@@ -9,17 +9,19 @@ h1 {
 }
 
 .card {
-    border: 5px double rgb(124, 167, 223);
+    border: 5px double #477e94;
     border-radius: 10px;
-    min-width: 350px;
+    min-width: 345px;
 }
 
 .cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     align-items: center;
     margin-bottom: 100px;
+    justify-content: center;
 }
 
 .button {
@@ -37,6 +39,10 @@ h1 {
     left: 50%;
     bottom: 0;
     transform: translate(-50%, -50%);
+}
+
+.add-button:hover {
+    background-color: rgb(37, 78, 201);
 }
 
 .buttons {
@@ -79,6 +85,26 @@ h1 {
     transition: 1.3s all;
 }
 
+.card-buttons {
+    borderr: 2px solid red;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.read-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+}
+
+.remove-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+}
 
 
 
