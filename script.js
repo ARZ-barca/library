@@ -1,5 +1,19 @@
 let myLibrary = [];
+//making it use class instead of constructor function
+class Book {
+    constructor(name, author, year, pages, read) {
+        this.name = name,
+        this.author = author,
+        this.year = year,
+        this.pages = pages,
+        this.read = read
+    }
+    changeRead() {
+        this.read = !this.read
+    }
+}
 
+/*
 function Book(name, author, year, pages, read) {
     this.name = name,
     this.author = author,
@@ -11,16 +25,19 @@ function Book(name, author, year, pages, read) {
 Book.prototype.changeRead = function() {
     this.read = !this.read
 }
-
+*/
+//adding the book to library
 function addBookToLibrary(name, author, year, pages, read) {
     let newBook = new Book(name, author, year, pages, read);
     myLibrary.push(newBook);
 }
 //adding the book from my library as a card to cards
+//adding the event handlers here because its easy
 const cards = document.querySelector('.cards')
 function createCard(book) {
     let card = document.createElement('div')
     let text;
+    //for later use
     if (book.read) {
         text = 'Read'
     } else {
@@ -72,14 +89,19 @@ function activeForm() {
     form.classList.toggle('active');
 }
 // escape key functionality and enter key when form is on functionality
+/* this feature needs rework and i dont feel like doing it right now 
+//nor do i know how to do it but it has something to do with auto focus
 window.addEventListener('keydown', (event) => {
     if (event.keyCode === 27) {
         form.classList.remove('active')
+        console.log(form)
     }
     if (event.keyCode === 13 && form.getAttribute('class').includes('active')) {
+        console.log(form)
         addBook()
     }
 })
+*/
 //adding the book to library
 const addToLibrary = document.querySelector('.add-to-library') ;
 addToLibrary.addEventListener('click', addBook);
@@ -94,7 +116,7 @@ function addBook() {
         return;
     }
     addBookToLibrary(title, author, year, pages, read)
-    console.log(myLibrary)
+    //console.log(myLibrary)
     createCard(myLibrary[myLibrary.length - 1])
 }
 //adding the cancel button functionality
