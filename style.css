@@ -42,7 +42,8 @@ header {
 
 .book {
   width: 200px;
-  height: 270px;
+  height: fit-content;
+
   background-color: aqua;
 
   display: flex;
@@ -55,7 +56,13 @@ header {
 
 .add-book {
   width: 200px;
-  height: 270px;
+
   background-color: #c2410c;
   border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-around;
+  padding: 15px;
 }
