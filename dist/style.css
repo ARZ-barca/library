@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+:root {
+  --color-50: #fff7ed;
+  --color-100: #ffedd5;
+  --color-200: #fed7aa;
+  --color-300: #fdba74;
+  --color-400: #fb923c;
+  --color-500: #f97316;
+  --color-600: #ea580c;
+  --color-700: #c2410c;
+  --color-800: #9a3412;
+  --color-900: #7c2d12;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.library {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  width: 200px;
+  height: 270px;
+  background-color: aqua;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.add-book {
+  width: 200px;
+  height: 270px;
+  background-color: #c2410c;
+  border-radius: 10px;
+}
