@@ -41,7 +41,7 @@ header {
 }
 
 .book {
-  width: 200px;
+  width: 250px;
   height: fit-content;
 
   background-color: aqua;
@@ -55,7 +55,7 @@ header {
 }
 
 .add-book {
-  width: 200px;
+  width: 250px;
 
   background-color: #c2410c;
   border-radius: 10px;
@@ -65,4 +65,8 @@ header {
   gap: 15px;
   justify-content: space-around;
   padding: 15px;
+}
+
+.read.have-read {
+  background-color: rgb(87, 182, 87);
 }
