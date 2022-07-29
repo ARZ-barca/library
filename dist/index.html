@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -26,12 +26,31 @@
             <button type="button" class="read">Read</button>
             <button type="button" class="remove">Remove</button>
           </div>
-          <div class="add-book">
-            <input type="text" placeholder="title" required />
-            <input type="text" placeholder="author" required />
-            <input type="number" placeholder="pages" required />
-            <button type="button" class="add-buton">add</button>
-          </div>
+          <form class="add-book" novalidate>
+            <input
+              type="text"
+              class="title-input"
+              placeholder="title"
+              required
+              minlength="3"
+              maxlength="10"
+            />
+            <input
+              type="text"
+              class="author-input"
+              placeholder="author"
+              required
+              maxlength="10"
+              pattern="[a-zA-Z]+"
+            />
+            <input
+              type="number"
+              class="pages-input"
+              placeholder="pages"
+              required
+            />
+            <button type="submit" class="add-buton">add</button>
+          </form>
         </div>
       </main>
     </div>

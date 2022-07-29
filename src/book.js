@@ -1,5 +1,6 @@
 const library = [];
 
+// prototype for book object
 const bookMethods = {
   changeRead() {
     this.read = !this.read;
@@ -15,14 +16,30 @@ const bookMethods = {
   },
 };
 
+// book factory function
 function Book(title, author, pages) {
-  let bookProps = { title, author, pages, read: false };
+  const bookProps = { title, author, pages, read: false };
   return Object.assign(bookProps, bookMethods);
 }
 
+// adds a book to library then returns it
 function addBook(title, author, pages) {
-  let newBook = Book(title, author, pages);
+  const newBook = Book(title, author, pages);
   library.push(newBook);
+  return newBook;
 }
 
-function removeBook() {}
+// removes a book from library
+function removeBook(book) {
+  let bookIndex = library.indexOf(book);
+  if (bookIndex === 1) {
+    return;
+  }
+  library.splice(bookIndex, 1);
+}
+
+function getLibrary() {
+  return library;
+}
+
+export { addBook, removeBook, getLibrary };

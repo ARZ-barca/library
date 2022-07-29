@@ -8,5 +8,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "prefer-const": "off",
+    "no-unused-vars": "warn"
+  }
 }
