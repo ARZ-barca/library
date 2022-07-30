@@ -1,19 +1,20 @@
-import { addBook, removeBook, getLibrary } from "./book";
+import { addBook, removeBook } from "./book";
 
 // reference to library and form to add books before form
 const form = document.querySelector(".add-book");
 const library = document.querySelector(".library");
 
 // craetes a book both in dom and in library array
-function createBook(title, author, pages) {
+function createBook(title, author, pages, read) {
   let bookDiv = document.createElement("div");
-  let book = addBook(title, author, pages);
+  let book = addBook(title, author, pages, read);
+  let readText = book.read === true ? "Read" : "Not read";
   bookDiv.innerHTML = `
             <div class="title">${title}</div>
             <div class="by">By</div>
             <div class="author">${author}</div>
-            <div class="pages">${pages}</div>
-            <button type="button" class="read">Read</button>
+            <div class="pages">${pages} pages</div>
+            <button type="button" class="read">${readText}</button>
             <button type="button" class="remove">Remove</button>`;
   bookDiv.classList.add("book");
 
@@ -27,6 +28,7 @@ function createBook(title, author, pages) {
   function changeRead() {
     this.classList.toggle("have-read");
     book.changeRead();
+    this.textContent = book.read === true ? "Read" : "Not read";
   }
   function deleteBook() {
     bookDiv.remove();
@@ -35,8 +37,6 @@ function createBook(title, author, pages) {
 
   changeReadButton.addEventListener("click", changeRead);
   removeButton.addEventListener("click", deleteBook);
-  // test
-  console.log(getLibrary());
 }
 
 export default createBook;

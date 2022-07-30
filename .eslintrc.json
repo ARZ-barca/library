@@ -10,6 +10,9 @@
   },
   "rules": {
     "prefer-const": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-use-before-define": "warn",
+    "no-param-reassign": "warn",
+    "no-empty": "off"
   }
 }

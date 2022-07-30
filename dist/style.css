@@ -9,27 +9,39 @@ html {
 }
 
 :root {
-  --color-50: #fff7ed;
-  --color-100: #ffedd5;
-  --color-200: #fed7aa;
-  --color-300: #fdba74;
-  --color-400: #fb923c;
-  --color-500: #f97316;
-  --color-600: #ea580c;
-  --color-700: #c2410c;
-  --color-800: #9a3412;
-  --color-900: #7c2d12;
+  --header-bg: rgb(9, 115, 119);
+  --header-font-color: rgb(0, 247, 255);
+  --main-bg: rgb(114, 212, 180);
+  --book-bg: rgb(162, 173, 117);
+  --book-border-color: rgb(197, 201, 142);
+  --book-font-color: rgb(82, 73, 22);
+  --book-pages-font-color: rgb(150, 223, 217);
 }
 
 .page {
   min-height: 100vh;
+  background-color: var(--main-bg);
 }
 
 header {
-  height: 100px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--header-bg);
+  color: var(--header-font-color);
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .library {
@@ -41,23 +53,63 @@ header {
 }
 
 .book {
-  width: 250px;
-  height: fit-content;
+  width: 300px;
+  height: 500px;
 
-  background-color: aqua;
+  background-color: var(--book-bg);
 
+  border: 10px double var(--book-border-color);
+
+  color: var(--book-font-color);
   display: flex;
   flex-direction: column;
   gap: 15px;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 15px;
 }
 
-.add-book {
-  width: 250px;
+.title {
+  font-size: 1.1rem;
+}
 
-  background-color: #c2410c;
+.by {
+  font-size: 0.8rem;
+}
+
+.author {
+  font-size: 1.1rem;
+}
+
+.pages {
+  font-style: italic;
+  color: var(--book-pages-font-color);
+}
+
+.book .read {
+  background-color: rgb(176, 187, 180);
+}
+
+.book .remove {
+  background-color: rgb(226, 156, 98);
+}
+
+.book button {
+  font-size: 0.8rem;
+  font-weight: 300;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.add-book {
+  width: 300px;
+  height: 500px;
+
+  background-color: #cbd66a;
   border-radius: 10px;
 
   display: flex;
@@ -65,8 +117,78 @@ header {
   gap: 15px;
   justify-content: space-around;
   padding: 15px;
+
+  position: relative;
+}
+
+.add-book-cover {
+  content: "Add a book";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #597e94;
+  cursor: pointer;
+
+  color: var(--book-font-color);
+
+  border-radius: 10px;
+
+  transition: transform 500ms ease-in-out;
+  transform-origin: 0% 0%;
+}
+
+.add-book-cover.hide {
+  transform: rotateY(90deg);
+}
+
+.add-book input {
+  height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  border: none;
+}
+
+.add-book button {
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background-color: rgb(153, 175, 167);
+  color: var(--book-font-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.add-book button:hover {
+  background-color: rgb(42, 211, 211);
+}
+.add-book button.cancel-add-book:hover {
+  background-color: rgb(226, 156, 98);
+}
+
+img.plus {
+  width: 30px;
+  margin-right: 10px;
+  filter: invert(22%) sepia(9%) saturate(7136%) hue-rotate(27deg)
+    brightness(95%) contrast(83%);
+}
+
+.error {
+  color: #72361e;
 }
 
 .read.have-read {
-  background-color: rgb(87, 182, 87);
+  background-color: rgb(65, 167, 65);
+  color: hsl(51, 48%, 58%);
 }

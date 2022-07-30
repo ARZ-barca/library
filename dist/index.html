@@ -12,8 +12,8 @@
     <div class="page">
       <header>
         <h1 class="hero">
-          welcome to <br />
-          the <span class="logo">library</span>
+          welcome to the<br />
+          <span class="logo">library</span>
         </h1>
       </header>
       <main>
@@ -22,7 +22,7 @@
             <div class="title">good book</div>
             <div class="by">By</div>
             <div class="author">alireza</div>
-            <div class="pages">123</div>
+            <div class="pages">123 pages</div>
             <button type="button" class="read">Read</button>
             <button type="button" class="remove">Remove</button>
           </div>
@@ -32,24 +32,34 @@
               class="title-input"
               placeholder="title"
               required
-              minlength="3"
-              maxlength="10"
+              maxlength="20"
             />
+            <div class="title-error error"></div>
             <input
               type="text"
               class="author-input"
               placeholder="author"
               required
-              maxlength="10"
               pattern="[a-zA-Z]+"
+              maxlength="20"
+              minlength="3"
             />
+            <div class="author-error error"></div>
             <input
               type="number"
               class="pages-input"
               placeholder="pages"
+              min="1"
               required
             />
-            <button type="submit" class="add-buton">add</button>
+            <div class="pages-error error"></div>
+            <button type="submit" class="add-buton">
+              <img src="images/plus-outline.svg" class="plus" />add
+            </button>
+            <button type="button" class="cancel-add-book">cancel</button>
+            <div class="add-book-cover">
+              <img src="images/plus-outline.svg" class="plus" />Add a book
+            </div>
           </form>
         </div>
       </main>

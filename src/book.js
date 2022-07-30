@@ -17,8 +17,8 @@ const bookMethods = {
 };
 
 // book factory function
-function Book(title, author, pages) {
-  const bookProps = { title, author, pages, read: false };
+function Book(title, author, pages, read) {
+  const bookProps = { title, author, pages, read };
   return Object.assign(bookProps, bookMethods);
 }
 
