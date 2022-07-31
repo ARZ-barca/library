@@ -1,31 +1,24 @@
-const library = [];
+let library = [];
 
-// prototype for book object
-const bookMethods = {
-  changeRead() {
-    this.read = !this.read;
-  },
-  changeTitle(newTitle) {
-    this.title = newTitle;
-  },
-  changeAuthor(newAuthor) {
-    this.author = newAuthor;
-  },
-  changepages(newPages) {
-    this.pages = newPages;
-  },
-};
+// updates the local storage
+function setLocalStorage() {
+  localStorage.setItem("library", JSON.stringify(library));
+  console.log(localStorage.library);
+}
 
 // book factory function
 function Book(title, author, pages, read) {
-  const bookProps = { title, author, pages, read };
-  return Object.assign(bookProps, bookMethods);
+  return { title, author, pages, read };
 }
 
 // adds a book to library then returns it
-function addBook(title, author, pages) {
-  const newBook = Book(title, author, pages);
+function addBook(title, author, pages, read) {
+  const newBook = Book(title, author, pages, read);
+
   library.push(newBook);
+  // console.log(library);
+  setLocalStorage();
+
   return newBook;
 }
 
@@ -36,10 +29,15 @@ function removeBook(book) {
     return;
   }
   library.splice(bookIndex, 1);
+  setLocalStorage();
 }
 
 function getLibrary() {
   return library;
 }
 
-export { addBook, removeBook, getLibrary };
+function setLibrary(newLibrary) {
+  library = newLibrary;
+}
+
+export { addBook, removeBook, getLibrary, setLibrary, setLocalStorage };

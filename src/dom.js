@@ -1,4 +1,4 @@
-import { addBook, removeBook } from "./book";
+import { addBook, removeBook, setLocalStorage } from "./book";
 
 // reference to library and form to add books before form
 const form = document.querySelector(".add-book");
@@ -13,11 +13,11 @@ function createBook(title, author, pages, read) {
             <div class="title">${title}</div>
             <div class="by">By</div>
             <div class="author">${author}</div>
-            <div class="pages">${pages} pages</div>
+            <div class="pages">${book.pages} pages</div>
             <button type="button" class="read">${readText}</button>
             <button type="button" class="remove">Remove</button>`;
   bookDiv.classList.add("book");
-
+  // console.log(book);
   library.insertBefore(bookDiv, form);
 
   // functionality for read and remove buttons
@@ -27,7 +27,8 @@ function createBook(title, author, pages, read) {
 
   function changeRead() {
     this.classList.toggle("have-read");
-    book.changeRead();
+    book.read = !book.read;
+    setLocalStorage();
     this.textContent = book.read === true ? "Read" : "Not read";
   }
   function deleteBook() {

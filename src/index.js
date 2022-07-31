@@ -1,6 +1,5 @@
-import createBook from "./dom";
 import activateForm from "./form";
+import loadStorage from "./storage";
 
-createBook("good book 2", "alireza", 123);
-
+loadStorage();
 activateForm();
