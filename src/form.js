@@ -79,6 +79,7 @@ function checkPagesInput() {
   }
 }
 
+// shows and hides the form
 function activateForm() {
   formCover.addEventListener("click", (e) => {
     e.target.classList.add("hide");

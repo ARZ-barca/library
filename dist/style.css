@@ -6,6 +6,11 @@
 
 html {
   font-size: 20px;
+
+  font-family: "Kalam", cursive;
+}
+button {
+  font-family: inherit;
 }
 
 :root {
