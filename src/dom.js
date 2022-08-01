@@ -8,6 +8,7 @@ const library = document.querySelector(".library");
 function createBook(title, author, pages, read) {
   let bookDiv = document.createElement("div");
   let book = addBook(title, author, pages, read);
+  // console.log(localStorage.library);
   let readText = book.read === true ? "Read" : "Not read";
   bookDiv.innerHTML = `
             <div class="title">${title}</div>
@@ -24,6 +25,11 @@ function createBook(title, author, pages, read) {
 
   let changeReadButton = bookDiv.querySelector(".read");
   let removeButton = bookDiv.querySelector(".remove");
+
+  // check for when loading from storage
+  if (book.read) {
+    changeReadButton.classList.add("have-read");
+  }
 
   function changeRead() {
     this.classList.toggle("have-read");
