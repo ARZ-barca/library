@@ -26,6 +26,8 @@ button {
 .page {
   min-height: 100vh;
   background-color: var(--main-bg);
+  position: relative;
+  padding-bottom: 60px;
 }
 
 header {
@@ -196,4 +198,36 @@ img.plus {
 .read.have-read {
   background-color: rgb(65, 167, 65);
   color: hsl(51, 48%, 58%);
+}
+
+/*
+    footer
+*/
+
+footer {
+  position: absolute;
+  bottom: 5px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+footer img,
+footer .footer-label {
+  width: 40px;
+  height: 40px;
+}
+
+footer a {
+  display: flex;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+}
+
+footer a span.footer-label {
+  line-height: 40px;
+  width: max-content;
+  flex-shrink: 0;
 }
